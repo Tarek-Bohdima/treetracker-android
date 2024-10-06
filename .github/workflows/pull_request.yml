@@ -5,6 +5,7 @@ name: Treetracker Android App CI PR
 on:
   pull_request:
     branches: [ master, release* ]
+  # to be deleted
   workflow_dispatch:
 
 jobs:
