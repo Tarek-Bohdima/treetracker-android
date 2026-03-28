@@ -32,6 +32,7 @@ class CreateTreeRequestUseCase(private val dao: TreeTrackerDAO) :
 
         val treeCapture = dao.getTreeCaptureById(params.treeId)
         val planterCheckIn = dao.getPlanterCheckInById(treeCapture.planterCheckInId)
+            ?: throw IllegalStateException("No Planter CheckIn")
         val planterInfo = dao.getPlanterInfoById(planterCheckIn.planterInfoId)
             ?: throw IllegalStateException("No Planter Info")
 

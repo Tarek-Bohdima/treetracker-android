@@ -45,13 +45,13 @@ object Converters {
     fun stringToInstance(s: String?): Instant? = s?.toInstant()
 
     @TypeConverter
-    fun stringToArray(value: String?): List<String?>? {
-        val listType: Type = object : TypeToken<List<String?>?>() {}.type
+    fun stringToArray(value: String?): List<String>? {
+        val listType: Type = object : TypeToken<List<String>?>() {}.type
         return gson.fromJson(value, listType)
     }
 
     @TypeConverter
-    fun arrayToString(list: List<String?>?): String? {
+    fun arrayToString(list: List<String>?): String? {
         return gson.toJson(list)
     }
 }
